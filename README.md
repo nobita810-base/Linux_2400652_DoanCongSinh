@@ -26,3 +26,8 @@ chmod +x scripts/*.sh
 ./scripts/hethong.sh
 ./scripts/quanlysv.sh
 ./scripts/saoluu.sh
+
+## Ket qua thuc hien
+- hethong.sh: Hien thi thong tin he thong va ket noi mang.
+- quanlysv.sh: Da kiem tra 6 chuc nang quan ly sinh vien.
+- saoluu.sh: Tao file nen thanh cong va ghi log.
