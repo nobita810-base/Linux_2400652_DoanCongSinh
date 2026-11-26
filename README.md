@@ -17,3 +17,6 @@ Du an thuc hanh hoc phan Linux va Lap trinh ma nguon mo.
 - scripts/: Chua cac script Linux
 - logs/: Luu nhat ky he thong va sao luu
 - backup/: Luu cac file sao luu
+
+## Feature backup
+Chuc nang sao luu du lieu duoc phat trien tren nhanh feature-backup.
