@@ -1,22 +1,28 @@
+# Linux Project - Quan ly sinh vien
 
-## Thong tin du an
+## Thong tin sinh vien
 - MSSV: 2400652
-- Ho va ten: Doan Cong Sinh
+- Ho ten: Doan Cong Sinh
 - Repository: Linux_2400652_DoanCongSinh
 
-## Mo ta
-Du an thuc hanh hoc phan Linux va Lap trinh ma nguon mo.
+## Gioi thieu
+Du an thuc hanh Linux, su dung Bash Script de quan ly sinh vien,
+kiem tra thong tin he thong va sao luu du lieu.
 
-## Huong dan su dung
-- Chay script he thong: ./scripts/hethong.sh
-- Chay quan ly sinh vien: ./scripts/quanlysv.sh
-- Chay sao luu du lieu: ./scripts/saoluu.sh
+## Cau truc thu muc
+- data: Chua du lieu sinh vien
+- scripts: Chua cac script Bash
+- logs: Luu nhat ky he thong va sao luu
+- backup: Luu cac file sao luu
 
-## Cau truc du an
-- data/: Chua du lieu sinh vien
-- scripts/: Chua cac script Linux
-- logs/: Luu nhat ky he thong va sao luu
-- backup/: Luu cac file sao luu
+## Mo ta cac script
+- hethong.sh: Hien thi thong tin he thong va kiem tra mang.
+- quanlysv.sh: Quan ly danh sach, tim kiem va thong ke sinh vien.
+- saoluu.sh: Nen va sao luu du lieu.
 
-## Feature backup
-Chuc nang sao luu du lieu duoc phat trien tren nhanh feature-backup.
+## Huong dan chay
+chmod +x scripts/*.sh
+
+./scripts/hethong.sh
+./scripts/quanlysv.sh
+./scripts/saoluu.sh

@@ -1,25 +1,27 @@
 #!/bin/bash
 
-THOIGIAN=$(date +"%Y%m%d_%H%M%S")
-TENFILE="backup_$THOIGIAN.tar.gz"
+DATA_DIR="data"
+BACKUP_DIR="backup"
+LOG_FILE="logs/backup.log"
 
-echo "===== CHUONG TRINH SAO LUU ====="
-
-if [ ! -d "data" ]; then
-    echo "Khong tim thay thu muc data!"
+if [ ! -d "$DATA_DIR" ]; then
+    echo "Khong tim thay thu muc data"
     exit 1
 fi
 
-tar -czf "backup/$TENFILE" data
+mkdir -p "$BACKUP_DIR"
 
-if [ $? -eq 0 ]; then
-    echo "$(date) | $TENFILE | THANH CONG" >> logs/backup.log
-    echo "Sao luu thanh cong: $TENFILE"
+TEN_FILE="backup_$(date +%Y%m%d_%H%M%S).tar.gz"
+
+if tar -czf "$BACKUP_DIR/$TEN_FILE" "$DATA_DIR"; then
+    echo "$(date) | $TEN_FILE | THANH CONG" >> "$LOG_FILE"
+    echo "Sao luu thanh cong: $TEN_FILE"
 else
-    echo "$(date) | $TENFILE | THAT BAI" >> logs/backup.log
-    echo "Sao luu that bai!"
+    echo "$(date) | $TEN_FILE | THAT BAI" >> "$LOG_FILE"
+    echo "Sao luu that bai"
+    exit 1
 fi
 
 echo ""
 echo "===== DANH SACH BAN SAO LUU ====="
-ls -lh backup/
+ls -lh "$BACKUP_DIR"

@@ -1,24 +1,24 @@
 ===== THONG TIN HE THONG =====
-Nguoi dung: sinh
+Nguoi dung: duong
 Ten may: P1M2
-Ngay gio: Thu Nov 26 07:29:44 UTC 2026
-Linux Kernel: 4.4.0-22621-Microsoft
+Ngay gio: Thu Nov 26 08:30:32 UTC 2026
+Kernel: 4.4.0-22621-Microsoft
 
-===== DUNG LUONG RAM =====
+===== THONG TIN RAM =====
                total        used        free      shared  buff/cache   available
-Mem:           3.9Gi       3.4Gi       574Mi        17Mi       223Mi       574Mi
-Swap:           12Gi       437Mi        11Gi
+Mem:           3.9Gi       3.4Gi       553Mi        17Mi       223Mi       553Mi
+Swap:           12Gi       761Mi        11Gi
 
-===== DUNG LUONG O DIA =====
+===== THONG TIN O DIA =====
 Filesystem      Size  Used Avail Use% Mounted on
-rootfs          100G   80G   21G  80% /
-none            100G   80G   21G  80% /dev
-none            100G   80G   21G  80% /run
-none            100G   80G   21G  80% /run/lock
-none            100G   80G   21G  80% /run/shm
-none            100G   80G   21G  80% /run/user
-tmpfs           100G   80G   21G  80% /sys/fs/cgroup
-C:\             100G   80G   21G  80% /mnt/c
+rootfs          100G   83G   17G  84% /
+none            100G   83G   17G  84% /dev
+none            100G   83G   17G  84% /run
+none            100G   83G   17G  84% /run/lock
+none            100G   83G   17G  84% /run/shm
+none            100G   83G   17G  84% /run/user
+tmpfs           100G   83G   17G  84% /sys/fs/cgroup
+C:\             100G   83G   17G  84% /mnt/c
 E:\             139G  110G   30G  79% /mnt/e
 
 ===== KIEM TRA MANG =====

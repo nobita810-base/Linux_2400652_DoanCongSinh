@@ -1,64 +1,63 @@
 #!/bin/bash
 
-DATA="data/sinhvien.txt"
-
-if [ ! -f "$DATA" ]; then
-    echo "Khong tim thay file du lieu!"
-    exit 1
-fi
+FILE="data/sinhvien.txt"
 
 while true
 do
-    echo "===== CHUONG TRINH QUAN LY SINH VIEN ====="
+    echo ""
+    echo "========== QUAN LY SINH VIEN =========="
     echo "1. Hien thi danh sach sinh vien"
     echo "2. Tim kiem sinh vien theo ma"
-    echo "3. Thong ke sinh vien dat va khong dat"
+    echo "3. Thong ke sinh vien dau/truot"
     echo "4. Tinh diem trung binh"
-    echo "5. Hien thi sinh vien co diem cao nhat"
+    echo "5. Tim sinh vien co diem cao nhat"
     echo "6. Sap xep sinh vien theo diem giam dan"
-    echo "0. Thoat chuong trinh"
+    echo "0. Thoat"
+    echo "======================================="
+    read -p "Nhap lua chon: " choice
 
-    read -p "Nhap lua chon: " chon
-
-    case $chon in
+    case "$choice" in
         1)
-            echo "DANH SACH SINH VIEN"
-            cat "$DATA"
+            cat "$FILE"
             ;;
         2)
             read -p "Nhap ma sinh vien: " ma
-            grep "^$ma," "$DATA"
+            grep "^$ma," "$FILE" || echo "Khong tim thay sinh vien"
             ;;
         3)
-            awk -F',' '
-            $3 >= 5 {dat++}
-            $3 < 5 {khongdat++}
+            awk -F',' '{
+                if ($3 >= 5) dau++
+                else truot++
+            }
             END {
-                print "Sinh vien dat:", dat
-                print "Sinh vien khong dat:", khongdat
-            }' "$DATA"
+                print "So sinh vien dau:", dau
+                print "So sinh vien truot:", truot
+            }' "$FILE"
             ;;
         4)
-            awk -F',' '
-            {tong += $3; dem++}
+            awk -F',' '{
+                tong += $3
+                dem++
+            }
             END {
-                printf "Diem trung binh: %.2f\n", tong/dem
-            }' "$DATA"
+                if (dem > 0)
+                    printf "Diem trung binh: %.2f\n", tong/dem
+                else
+                    print "Khong co du lieu"
+            }' "$FILE"
             ;;
         5)
-            sort -t',' -k3,3nr "$DATA" | head -n 1
+            sort -t',' -k3,3nr "$FILE" | head -n 1
             ;;
         6)
-            echo "DANH SACH SAP XEP GIAM DAN"
-            sort -t',' -k3,3nr "$DATA"
+            sort -t',' -k3,3nr "$FILE"
             ;;
         0)
-            echo "Thoat chuong trinh!"
+            echo "Tam biet!"
             break
             ;;
         *)
             echo "Lua chon khong hop le!"
             ;;
     esac
-    echo ""
 done
