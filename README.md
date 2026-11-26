@@ -36,3 +36,6 @@ chmod +x scripts/*.sh
 Du lieu trong thu muc data duoc nen thanh file TAR.GZ.
 Cac ban sao luu duoc luu trong thu muc backup.
 Nhat ky sao luu duoc ghi tai logs/backup.log.
+
+## Phat trien tinh nang
+Nhanh feature-backup bo sung mo ta va huong dan chuc nang sao luu du lieu.
